@@ -41,8 +41,8 @@ To set up the SMTP server on your VPS, follow these steps:
    sudo cp opendkim.conf /etc/opendkim.conf
    ```
 ### **Configuration**
-Postfix: Edit postfix-main.cf to configure your domain and mail settings.
-Dovecot: Edit dovecot.conf to set up IMAP/POP3 services.
+Postfix: Edit postfix-main.cf to configure your domain and mail settings.  <br>
+Dovecot: Edit dovecot.conf to set up IMAP/POP3 services.  <br>
 OpenDKIM: Edit opendkim.conf to configure DKIM signing.
 
 ### **DNS Records**
