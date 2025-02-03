@@ -46,7 +46,7 @@ Dovecot: Edit dovecot.conf to set up IMAP/POP3 services.
 OpenDKIM: Edit opendkim.conf to configure DKIM signing.
 
 ### **DNS Records**
-Refer to the SPF_DKIM_DMARC_Records.txt(../SPF_DKIM_DMARC_Records.txt) file for the DNS records required for email authentication.
+Refer to the [SPF_DKIM_DMARC_Records.txt](./SPF_DKIM_DMARC_Records.txt) file for the DNS records required for email authentication.
 
 ### **Screenshots**
 Check out the Screenshots(#Screenshots) folder for visuals of the setup process and final results.
