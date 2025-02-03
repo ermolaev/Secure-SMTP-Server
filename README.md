@@ -42,11 +42,13 @@ To set up the SMTP server on your VPS, follow these steps:
    ```
 ### **Configuration**
 1.   Postfix: Edit postfix-main.cf to configure your domain and mail settings.
-     ```bash
-    nano /etc/postfix/main.cf
-    ```
+     ```
+     nano /etc/postfix/main.cf
+     ```
+
   <br>
-     ```text
+  
+     ```
       # Postfix Main Configuration File
 
       # Hostname and Domain
