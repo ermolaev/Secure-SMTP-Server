@@ -49,14 +49,18 @@ To set up the SMTP server on your VPS, follow these steps:
 2.   Now check the details that are in this file matches the following -
 
       # Postfix Main Configuration File
+      
       # Hostname and Domain
       myhostname = mail.example.com
       mydomain = example.com
+      
       # Network Settings
       inet_interfaces = all
       inet_protocols = ipv4
+      
       # Mailbox Settings
       home_mailbox = Maildir/
+      
       # TLS Settings
       smtpd_tls_cert_file=/etc/letsencrypt/live/Domain_name/fullchain.pem
       smtpd_tls_key_file=/etc/letsencrypt/live/Domain_name/privkey.pem
@@ -91,8 +95,6 @@ To set up the SMTP server on your VPS, follow these steps:
       
       # Define the domain that will be signing emails
       Domain                 yourdomain.com
-      
-      # Define the selector (used in DNS TXT records)
       Selector              mail
       
       # Path to the private key for signing emails
@@ -106,15 +108,8 @@ To set up the SMTP server on your VPS, follow these steps:
       # Set mode to sign and verify emails
       Mode                  sv
       
-      # Canonicalization method for email headers and body
-      Canonicalization      relaxed/simple
-      
       # Socket for communication with mail server (Postfix, Exim, etc.)
       Socket                inet:8891@localhost
-      
-      # Specify the path to trusted hosts
-      ExternalIgnoreList    /etc/opendkim/trusted.hosts
-      InternalHosts         /etc/opendkim/trusted.hosts
       
       # Set up signing and key tables
       SigningTable          refile:/etc/opendkim/signing.table
@@ -123,9 +118,9 @@ To set up the SMTP server on your VPS, follow these steps:
       ```
       Replace your domain with actual domain
       Ensure that the required files exists if not create them -
-         - /etc/opendkim/trusted.hosts
-         - /etc/opendkim/signing.table
-         - /etc/opendkim/key.table
+         * /etc/opendkim/trusted.hosts <br>
+         * /etc/opendkim/signing.table <br>
+         * /etc/opendkim/key.table <br>
 
 ### **DNS Records**
 Refer to the [SPF_DKIM_DMARC_Records.md](./SPF_DKIM_DMARC_Records.md) file for the DNS records required for email authentication.
