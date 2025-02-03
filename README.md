@@ -6,8 +6,6 @@ Self-hosted SMTP server setup with SPF, DKIM, DMARC &amp; security configuration
 
 🚀 **Live Testing:** [MXToolbox Results](https://mxtoolbox.com/SuperTool.aspx) 
 
----
-
 ## 🛠️ Features & Security Implementations  
 ✅ **Postfix & Dovecot Setup** – Reliable email sending & receiving  
 ✅ **SPF, DKIM, DMARC** – Protects against email spoofing & phishing  
@@ -16,6 +14,7 @@ Self-hosted SMTP server setup with SPF, DKIM, DMARC &amp; security configuration
 ✅ **DNS Records Configuration** – Ensures proper email authentication  
 
 ---
+
 ## Table of Contents
 1. [Installation](#installation)
 2. [Configuration](#configuration)
