@@ -112,6 +112,7 @@ To set up the SMTP server on your VPS, follow these steps:
       SigningTable          refile:/etc/opendkim/signing.table
       KeyTable              refile:/etc/opendkim/key.table
   ```
+`
       Replace your domain with actual domain
       Ensure that the required files exists if not create them - <br>
          - /etc/opendkim/trusted.hosts <br>
