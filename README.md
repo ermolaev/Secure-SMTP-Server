@@ -1,4 +1,4 @@
-# Secure-SMTP-Server
+![image](https://github.com/user-attachments/assets/8448a32e-b00e-4c6d-b9dc-8a1464ac259e)# Secure-SMTP-Server
 Self-hosted SMTP server setup with SPF, DKIM, DMARC &amp; security configurations.
 
 # 📧 Secure SMTP Server Setup  
@@ -41,9 +41,30 @@ To set up the SMTP server on your VPS, follow these steps:
    sudo cp opendkim.conf /etc/opendkim.conf
    ```
 ### **Configuration**
-Postfix: Edit postfix-main.cf to configure your domain and mail settings.  <br>
-Dovecot: Edit dovecot.conf to set up IMAP/POP3 services.  <br>
-OpenDKIM: Edit opendkim.conf to configure DKIM signing.
+1.   Postfix: Edit postfix-main.cf to configure your domain and mail settings.  <br>
+     ```plaintext
+      # Postfix Main Configuration File
+
+      # Hostname and Domain
+      myhostname = mail.example.com
+      mydomain = example.com
+      
+      # Network Settings
+      inet_interfaces = all
+      inet_protocols = ipv4
+      
+      # Mailbox Settings
+      home_mailbox = Maildir/
+      
+      # TLS Settings
+      smtpd_tls_cert_file=/etc/letsencrypt/live/Domain_name/fullchain.pem
+      smtpd_tls_key_file=/etc/letsencrypt/live/Domain_name/privkey.pem
+      smtpd_use_tls = yes
+     ```
+
+   
+2.   Dovecot: Edit dovecot.conf to set up IMAP/POP3 services.  <br>
+3.   OpenDKIM: Edit opendkim.conf to configure DKIM signing.
 
 ### **DNS Records**
 Refer to the [SPF_DKIM_DMARC_Records.md](./SPF_DKIM_DMARC_Records.md) file for the DNS records required for email authentication.
