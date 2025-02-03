@@ -28,12 +28,12 @@ To set up the SMTP server on your VPS, follow these steps:
 1. Clone this repository:
    ```bash
    git clone https://github.com/0-Anonymous/Secure-SMTP-Server.git
-   bash```
+   ```
 2. Install the required packages:
    ```bash
    sudo apt-get update
    sudo apt-get install postfix dovecot-core opendkim opendkim-tools
-   bash```
+   ```
 3. Copy the configuration files from this repository to their respective locations:
    ```
    sudo cp postfix-main.cf /etc/postfix/main.cf
@@ -41,7 +41,11 @@ To set up the SMTP server on your VPS, follow these steps:
    sudo cp opendkim.conf /etc/opendkim.conf
    ```
 ### **Configuration**
-1.   Postfix: Edit postfix-main.cf to configure your domain and mail settings.  <br>
+1.   Postfix: Edit postfix-main.cf to configure your domain and mail settings.
+     ```bash
+    nano /etc/postfix/main.cf
+    ```
+  <br>
      ```text
       # Postfix Main Configuration File
 
@@ -60,11 +64,11 @@ To set up the SMTP server on your VPS, follow these steps:
       smtpd_tls_cert_file=/etc/letsencrypt/live/Domain_name/fullchain.pem
       smtpd_tls_key_file=/etc/letsencrypt/live/Domain_name/privkey.pem
       smtpd_use_tls = yes
-     text```
+     ```
 
    
-2.   Dovecot: Edit dovecot.conf to set up IMAP/POP3 services.  <br>
-3.   OpenDKIM: Edit opendkim.conf to configure DKIM signing.
+4.   Dovecot: Edit dovecot.conf to set up IMAP/POP3 services.  <br>
+5.   OpenDKIM: Edit opendkim.conf to configure DKIM signing.
 
 ### **DNS Records**
 Refer to the [SPF_DKIM_DMARC_Records.md](./SPF_DKIM_DMARC_Records.md) file for the DNS records required for email authentication.
