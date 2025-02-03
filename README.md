@@ -4,7 +4,7 @@ Self-hosted SMTP server setup with SPF, DKIM, DMARC &amp; security configuration
 # 📧 Secure SMTP Server Setup  
 *A self-hosted email server with SPF, DKIM, DMARC, and security hardening*  
 
-🚀 **Live Testing:** [MXToolbox Results](https://mxtoolbox.com/) 
+🚀 **Live Testing:** [MXToolbox Results](https://mxtoolbox.com/SuperTool.aspx) 
 
 📸 **Screenshots:**  
 ![Postfix Configuration](#)  
