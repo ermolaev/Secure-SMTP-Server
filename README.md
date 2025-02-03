@@ -1,6 +1,3 @@
-# Secure-SMTP-Server
-Self-hosted SMTP server setup with SPF, DKIM, DMARC &amp; security configurations.
-
 # 📧 Secure SMTP Server Setup  
 *A self-hosted email server with SPF, DKIM, DMARC, and security hardening*  
 
