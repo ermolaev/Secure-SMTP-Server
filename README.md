@@ -133,9 +133,9 @@ The above is how a SPF record looks like
 6.   Open firewall ports :
    ```
    ufw allow 25/tcp  # SMTP
-	ufw allow 587/tcp # Secure SMTP
-	ufw allow 993/tcp # Secure IMAP
-	ufw allow 995/tcp # Secure POP3
+   ufw allow 587/tcp # Secure SMTP
+   ufw allow 993/tcp # Secure IMAP
+   ufw allow 995/tcp # Secure POP3
    ufw reload
    ```
 7.   Verify SMTP Server is Working :
