@@ -1,3 +1,4 @@
 ## SPF Record
-![SPF](https://github.com/0-Anonymous/Secure-SMTP-Server/blob/main/SPF%20record.png?raw=true)
+
+[SPF](https://github.com/0-Anonymous/Secure-SMTP-Server/blob/main/SPF%20record.png?raw=true)
 
