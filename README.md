@@ -64,7 +64,7 @@ To set up the SMTP server on your VPS, follow these steps:
       smtpd_use_tls = yes 
    
 3.   Dovecot: Edit dovecot.conf to set up IMAP/POP3 services.
-      ```
+   ```
       # ========================
       # Custom Dovecot Configurations
       # ========================
@@ -83,9 +83,9 @@ To set up the SMTP server on your VPS, follow these steps:
       ssl_cert = </etc/letsencrypt/live/yourdomain.com/fullchain.pem
       ssl_key = </etc/letsencrypt/live/yourdomain.com/privkey.pem
 
-      ```
+ ```
 4.  OpenDKIM: Edit opendkim.conf to configure DKIM signing.
-      ```
+   ```
       # ================================
       # OpenDKIM Configuration
       # ================================
@@ -111,13 +111,12 @@ To set up the SMTP server on your VPS, follow these steps:
       # Set up signing and key tables
       SigningTable          refile:/etc/opendkim/signing.table
       KeyTable              refile:/etc/opendkim/key.table
-
-      ```
+  ```
       Replace your domain with actual domain
-      Ensure that the required files exists if not create them -
-         * /etc/opendkim/trusted.hosts <br>
-         * /etc/opendkim/signing.table <br>
-         * /etc/opendkim/key.table <br>
+      Ensure that the required files exists if not create them - <br>
+         - /etc/opendkim/trusted.hosts <br>
+         - /etc/opendkim/signing.table <br>
+         - /etc/opendkim/key.table <br>
 
 ### **DNS Records**
 Refer to the [SPF_DKIM_DMARC_Records.md](./SPF_DKIM_DMARC_Records.md) file for the DNS records required for email authentication.
