@@ -125,4 +125,4 @@ The above is how a SPF record looks like
 
 
 ### **Screenshots**
-Check out the [📸 Screenshots](📸%20Screenshots.txt) folder for visuals of the setup process and final results.
+Check out the [📸 Screenshots](📸%20Screenshots) folder for visuals of the setup process and final results.
