@@ -127,7 +127,7 @@ The above is how a SPF record looks like
 
 5.   Get an SSL certificate :
    ```
-   certbot certonly --standalone -d adi.r-webtech.com
+   certbot certonly --standalone -d Domain_name
    systemctl restart postfix
    ```
 6.   Open firewall ports :
