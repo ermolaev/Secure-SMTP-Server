@@ -13,7 +13,6 @@ Self-hosted SMTP server setup with SPF, DKIM, DMARC &amp; security configuration
 ✅ **Fail2Ban & Rate-Limiting** – Prevents brute-force attacks  
 ✅ **DNS Records Configuration** – Ensures proper email authentication  
 
----
 
 ## Table of Contents
 1. [Installation](#installation)
