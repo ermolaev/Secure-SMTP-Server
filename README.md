@@ -20,11 +20,17 @@ Self-hosted SMTP server setup with SPF, DKIM, DMARC &amp; security configuration
 ✅ **DNS Records Configuration** – Ensures proper email authentication  
 
 ---
+## Table of Contents
+1. [Installation](#installation)
+2. [Configuration](#configuration)
+3. [DNS Records](#dns-records)
+4. [Screenshots](#screenshots)
+5. [Contributing](#contributing)
+6. [License](#license)
 
-## 🚀 Step-by-Step Installation Guide  
-
-### **Step 1: Install Required Packages**  
+### **Installation**  
 ```bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install postfix dovecot-core dovecot-imapd opendkim opendkim-tools -y
+```
 
