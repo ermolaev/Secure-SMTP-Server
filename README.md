@@ -21,18 +21,6 @@ Self-hosted SMTP server setup with SPF, DKIM, DMARC &amp; security configuration
 
 ---
 
-## 📂 Folder Structure  
-📂 Secure-SMTP-Server
-│── 📄 README.md  # Project Documentation
-│── 📜 postfix-main.cf  # Postfix Configuration
-│── 📜 dovecot.conf  # Dovecot Configuration
-│── 📜 opendkim.conf  # DKIM Configuration
-│── 📜 SPF_DKIM_DMARC_Records.txt  # DNS Records
-│── 📸 Screenshots/  # Configuration & Testing Screenshots
-
-
----
-
 ## 🚀 Step-by-Step Installation Guide  
 
 ### **Step 1: Install Required Packages**  
