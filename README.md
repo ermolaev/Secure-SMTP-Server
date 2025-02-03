@@ -47,26 +47,26 @@ To set up the SMTP server on your VPS, follow these steps:
      ```
 
   <br>
-  
-        ```
-         # Postfix Main Configuration File
-   
-         # Hostname and Domain
-         myhostname = mail.example.com
-         mydomain = example.com
-         
-         # Network Settings
-         inet_interfaces = all
-         inet_protocols = ipv4
-         
-         # Mailbox Settings
-         home_mailbox = Maildir/
-         
-         # TLS Settings
-         smtpd_tls_cert_file=/etc/letsencrypt/live/Domain_name/fullchain.pem
-         smtpd_tls_key_file=/etc/letsencrypt/live/Domain_name/privkey.pem
-         smtpd_use_tls = yes
-        ```
+2.   Now check the details that are in this file matches the following -
+
+      ```
+      # Postfix Main Configuration File
+      # Hostname and Domain
+      myhostname = mail.example.com
+      mydomain = example.com
+            
+      # Network Settings
+      inet_interfaces = all
+      inet_protocols = ipv4
+            
+      # Mailbox Settings
+      home_mailbox = Maildir/
+            
+      # TLS Settings
+      smtpd_tls_cert_file=/etc/letsencrypt/live/Domain_name/fullchain.pem
+      smtpd_tls_key_file=/etc/letsencrypt/live/Domain_name/privkey.pem
+      smtpd_use_tls = yes 
+      ```
 
    
 4.   Dovecot: Edit dovecot.conf to set up IMAP/POP3 services.  <br>
