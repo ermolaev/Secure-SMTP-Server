@@ -47,6 +47,10 @@ OpenDKIM: Edit opendkim.conf to configure DKIM signing.
 
 ### **DNS Records**
 Refer to the [SPF_DKIM_DMARC_Records.txt](./📜%20SPF_DKIM_DMARC_Records.txt) file for the DNS records required for email authentication.
+![Screenshot of the app](https://github.com/0-Anonymous/Secure-SMTP-Server/blob/6cbf9f90fe665f6b94dfb80a56fc568f4e7b232b/SPF%20record.png)
+
+This is the content that explains the screenshot. Here I describe what the screenshot represents and provide additional details.
+
 
 ### **Screenshots**
 Check out the Screenshots(#Screenshots) folder for visuals of the setup process and final results.
