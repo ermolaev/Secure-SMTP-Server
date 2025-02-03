@@ -62,8 +62,70 @@ To set up the SMTP server on your VPS, follow these steps:
       smtpd_tls_key_file=/etc/letsencrypt/live/Domain_name/privkey.pem
       smtpd_use_tls = yes 
    
-4.   Dovecot: Edit dovecot.conf to set up IMAP/POP3 services.  <br>
-5.   OpenDKIM: Edit opendkim.conf to configure DKIM signing.
+3.   Dovecot: Edit dovecot.conf to set up IMAP/POP3 services.
+      ```
+      # ========================
+      # Custom Dovecot Configurations
+      # ========================
+      
+      # Enable IMAP protocol
+      protocols = imap pop3 lmtp
+      
+      # Set the mail location (modify based on your setup)
+      mail_location = maildir:/var/mail/vhosts/
+      
+      # Auth Mechanisms (for secure authentication)
+      auth_mechanisms = plain login
+      
+      # SSL/TLS Configuration (Enable SSL if required)
+      ssl = yes
+      ssl_cert = </etc/letsencrypt/live/yourdomain.com/fullchain.pem
+      ssl_key = </etc/letsencrypt/live/yourdomain.com/privkey.pem
+
+      ```
+4.  OpenDKIM: Edit opendkim.conf to configure DKIM signing.
+      ```
+      # ================================
+      # OpenDKIM Configuration
+      # ================================
+      
+      # Define the domain that will be signing emails
+      Domain                 yourdomain.com
+      
+      # Define the selector (used in DNS TXT records)
+      Selector              mail
+      
+      # Path to the private key for signing emails
+      KeyFile               /etc/opendkim/keys/yourdomain.com/mail.private
+      
+      # Enable logging to monitor OpenDKIM activity
+      LogWhy                yes
+      Syslog                yes
+      SyslogSuccess         yes
+      
+      # Set mode to sign and verify emails
+      Mode                  sv
+      
+      # Canonicalization method for email headers and body
+      Canonicalization      relaxed/simple
+      
+      # Socket for communication with mail server (Postfix, Exim, etc.)
+      Socket                inet:8891@localhost
+      
+      # Specify the path to trusted hosts
+      ExternalIgnoreList    /etc/opendkim/trusted.hosts
+      InternalHosts         /etc/opendkim/trusted.hosts
+      
+      # Set up signing and key tables
+      SigningTable          refile:/etc/opendkim/signing.table
+      KeyTable              refile:/etc/opendkim/key.table
+
+      ```
+      Replace your domain with actual domain
+      Ensure that the required files exists if not create them -
+         - /etc/opendkim/trusted.hosts
+         - /etc/opendkim/signing.table
+         - /etc/opendkim/key.table
 
 ### **DNS Records**
 Refer to the [SPF_DKIM_DMARC_Records.md](./SPF_DKIM_DMARC_Records.md) file for the DNS records required for email authentication.
