@@ -120,9 +120,9 @@ To set up the SMTP server on your VPS, follow these steps:
       - /etc/opendkim/key.table <br>
 
 ### **DNS Records**
-Refer to the [SPF_DKIM_DMARC_Records.md](./SPF_DKIM_DMARC_Records.md) file for the DNS records required for email authentication.
+Refer to the [SPF_DKIM_DMARC_Records.md](SPF_DKIM_DMARC_Records.md) file for the DNS records required for email authentication.
 The above is how a SPF record looks like
 
 
 ### **Screenshots**
-Check out the Screenshots(#Screenshots) folder for visuals of the setup process and final results.
+Check out the [Screenshots](📸Screenshots) folder for visuals of the setup process and final results.
