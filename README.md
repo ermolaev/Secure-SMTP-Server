@@ -28,12 +28,12 @@ To set up the SMTP server on your VPS, follow these steps:
 1. Clone this repository:
    ```bash
    git clone https://github.com/0-Anonymous/Secure-SMTP-Server.git
-   ```
+   bash```
 2. Install the required packages:
-   ```
+   ```bash
    sudo apt-get update
    sudo apt-get install postfix dovecot-core opendkim opendkim-tools
-   ```
+   bash```
 3. Copy the configuration files from this repository to their respective locations:
    ```
    sudo cp postfix-main.cf /etc/postfix/main.cf
@@ -42,7 +42,7 @@ To set up the SMTP server on your VPS, follow these steps:
    ```
 ### **Configuration**
 1.   Postfix: Edit postfix-main.cf to configure your domain and mail settings.  <br>
-     ```plaintext
+     ```text
       # Postfix Main Configuration File
 
       # Hostname and Domain
@@ -60,7 +60,7 @@ To set up the SMTP server on your VPS, follow these steps:
       smtpd_tls_cert_file=/etc/letsencrypt/live/Domain_name/fullchain.pem
       smtpd_tls_key_file=/etc/letsencrypt/live/Domain_name/privkey.pem
       smtpd_use_tls = yes
-     ```
+     text```
 
    
 2.   Dovecot: Edit dovecot.conf to set up IMAP/POP3 services.  <br>
