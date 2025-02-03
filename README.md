@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/8448a32e-b00e-4c6d-b9dc-8a1464ac259e)# Secure-SMTP-Server
+# Secure-SMTP-Server
 Self-hosted SMTP server setup with SPF, DKIM, DMARC &amp; security configurations.
 
 # 📧 Secure SMTP Server Setup  
