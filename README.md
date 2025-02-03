@@ -13,8 +13,8 @@
 
 ## Table of Contents
 1. [Installation](#installation)
-2. [Configuration](#configuration)
-3. [DNS Records](#dns-records)
+2. [DNS Records](#dns-records)
+3. [Configuration](#configuration)
 4. [Screenshots](#screenshots)
 
 ---
@@ -23,11 +23,11 @@
 To set up the SMTP server on your VPS, follow these steps:
 
 1. Clone this repository:
-   ```bash
+   ```
    git clone https://github.com/0-Anonymous/Secure-SMTP-Server.git
    ```
 2. Install the required packages:
-   ```bash
+   ```
    sudo apt-get update
    sudo apt-get install postfix dovecot-core opendkim opendkim-tools
    ```
@@ -37,6 +37,12 @@ To set up the SMTP server on your VPS, follow these steps:
    sudo cp dovecot.conf /etc/dovecot/dovecot.conf
    sudo cp opendkim.conf /etc/opendkim.conf
    ```
+
+### **DNS Records**
+Refer to the [SPF_DKIM_DMARC_Records.md](SPF_DKIM_DMARC_Records.md) file for the DNS records required for email authentication.
+The above is how a SPF record looks like
+
+   
 ### **Configuration**
 1.   Postfix: Edit postfix-main.cf to configure your domain and mail settings.
    ```
@@ -119,10 +125,37 @@ To set up the SMTP server on your VPS, follow these steps:
       - /etc/opendkim/signing.table <br>
       - /etc/opendkim/key.table <br>
 
-### **DNS Records**
-Refer to the [SPF_DKIM_DMARC_Records.md](SPF_DKIM_DMARC_Records.md) file for the DNS records required for email authentication.
-The above is how a SPF record looks like
-
+5.   Get an SSL certificate :
+   ```
+   certbot certonly --standalone -d adi.r-webtech.com
+   systemctl restart postfix
+   ```
+6.   Open firewall ports :
+   ```
+   ufw allow 25/tcp  # SMTP
+	ufw allow 587/tcp # Secure SMTP
+	ufw allow 993/tcp # Secure IMAP
+	ufw allow 995/tcp # Secure POP3
+   ufw reload
+   ```
+7.   Verify SMTP Server is Working :
+   ```
+   ss -tuln | grep :25
+   ss -tuln | grep :587
+   ```
+8.   Test Sending Emails -
+   ```
+   echo "Subject:this is my Test email  \n\n This is the body and this SMTP server  setup is successfully" | sendmail youremail@gmail.com
+   ```
+9.   Check Postfix Logs -
+   ```
+   tail -f /var/log/mail.log
+   ```
+10.   Test with telnet or netcat
+   ```
+    telnet adi.r-webtech.com 25
+    nc -zv adi.r-webtech.com 25
+   ```
 
 ### **Screenshots**
 Check out the [Screenshots](Screenshots) folder for visuals of the setup process and final results.
