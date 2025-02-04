@@ -11,7 +11,7 @@
 ✅ **DNS Records Configuration** – Ensures proper email authentication  
 
 ## **📑Table of Contents**
-1. [⚙️ Installation](#installation)
+1. [⚙️ Installation](#--installation)
 2. [Setup SPF, DKIM & DMARC](#setup-spf-dkim--dmarc)
 3. [Securing Your Email Server](#securing-your-email-server)
 4. [Testing Your Email Server](#testing-your-email-server)
