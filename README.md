@@ -105,7 +105,7 @@ To set up the SMTP server on your VPS, follow these steps:
 
 ---
 
-### **Setup SPF, DKIM and DMARC**
+### **🛡️ Setup SPF, DKIM & DMARC <a name="setup-spf-dkim-and-dmarc"></a>**
 
 1. **SPF (Sender Policy Framework):**
     - Add a TXT record to your DNS:
@@ -162,7 +162,7 @@ To set up the SMTP server on your VPS, follow these steps:
 
 ---
 
-### **Securing Your Email Server**
+### **🔒 Securing Your Email Server <a name="securing-your-email-server"></a>**
 
 1. **Enable Firewall:**
     ```bash
@@ -202,7 +202,7 @@ To set up the SMTP server on your VPS, follow these steps:
 
 ---
 
-### **Testing Your Email Server**
+### **🚀 Testing Your Email Server <a name="testing-your-email-server"></a>**
 
 1. **Send a Test mail:**
     ```bash
@@ -219,7 +219,7 @@ To set up the SMTP server on your VPS, follow these steps:
 
 ---
 
-### **Additional Security Measures**
+### **⚠️ Additional Security Measures <a name="additional-security-measures"></a>**
 
 1. **Fail2Ban:**
     - Install and configure Fail2Ban to block brute-force attacks:
