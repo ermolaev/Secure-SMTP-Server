@@ -11,17 +11,17 @@
 ✅ **DNS Records Configuration** – Ensures proper email authentication  
 
 ## **📑 Table of Contents**
-1. [Installation](#installation)
-2. [Setup SPF, DKIM and DMARC](#setup-spf-dkim-and-dmarc)
-3. [Securing Your Email Server](#securing-your-email-server)
-4. [Testing Your Email Server](#testing-your-email-server)
-5. [Additional Security Measures](#additional-security-measures)
+1. [⚙️ Installation](#installation)
+2. [🛡️ Setup SPF, DKIM & DMARC](#setup-spf-dkim-and-dmarc)
+3. [🔒 Securing Your Email Server](#securing-your-email-server)
+4. [🚀 Testing Your Email Server](#testing-your-email-server)
+5. [⚠️ Additional Security Measures](#additional-security-measures)
 
 
 
 ---
 
-### **Installation**  
+### **⚙️ Installation <a name="installation"></a>**  
 To set up the SMTP server on your VPS, follow these steps:
 
 1. **Step 1:** Update the system -
