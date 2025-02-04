@@ -1,8 +1,26 @@
+# 📧 Secure SMTP Server Setup  
+*A self-hosted email server with SPF, DKIM, DMARC, and security hardening*  
 
+🚀 **Live Testing:** [MXToolbox Results](https://mxtoolbox.com/SuperTool.aspx) 
+
+## 🛠️ Features & Security Implementations  
+✅ **Postfix & Dovecot Setup** – Reliable email sending & receiving  
+✅ **SPF, DKIM, DMARC** – Protects against email spoofing & phishing  
+✅ **TLS Encryption** – Secures email transmission  
+✅ **Fail2Ban & Rate-Limiting** – Prevents brute-force attacks  
+✅ **DNS Records Configuration** – Ensures proper email authentication  
+
+
+## Table of Contents
+
+---
+
+### **Installation**  
+To set up the SMTP server on your VPS, follow these steps:
  1. Step 1:   update the system -
 		a. sudo apt update && sudo apt upgrade -y
 		
-	2. Step 2:   Set up a Hostname and DNS Records -
+2. Step 2:   Set up a Hostname and DNS Records -
 		a. sudo hostnamectl set-hostname mail.yourdomain.com
 		b. Update the following file - 
 			i. sudo nano /etc/hosts
@@ -12,7 +30,7 @@
 			ii. MX Record: Point @ to mail.yourdomain.com.
 			iii. PTR Record (Reverse DNS): Set this up with your VPS provider to point your IP to mail.yourdomain.com
 			
-	3. Step 3:   Install Postfix (SMTP Server) -
+3. Step 3:   Install Postfix (SMTP Server) -
 		a. Install Postfix:
 			i. sudo apt install postfix -y
 			ii. During installation:
@@ -37,7 +55,7 @@
 			iii. Restart Postfix :
 				1) sudo systemctl restart postfix
 				
-	4. Step 4:   Install Dovecot (IMAP/POP3 Server) - 
+4. Step 4:   Install Dovecot (IMAP/POP3 Server) - 
 		a. Install Dovecot : 
 			i. sudo apt install dovecot-core dovecot-imapd dovecot-pop3d -y
 		b. Configuration Dovecot :
@@ -52,7 +70,7 @@
 		c. Restart Dovecot :
 			i. sudo systemctl restart dovecot
 			
-	5. Step 5:   Setup SPF, DKIM and DMARC -
+5. Step 5:   Setup SPF, DKIM and DMARC -
 		a. SPF (Sender Policy Framework) :
 			i. Add a TXT record to you DNS:
 				1) v=spf1 ip4:(your server IP) -all
@@ -82,7 +100,7 @@
 			i. Add a TXT record to your DNS:
 				1) v=DMARC1; p=none; rua=mailto:admin@yourdomain.com
 				
-	6. Step 6:   Secure Your Email Server -
+6. Step 6:   Secure Your Email Server -
 		a. Enable Firewall :
 			i. sudo ufw allow ssh
 			ii. sudo ufw allow 25/tcp       # SMTP
@@ -102,7 +120,7 @@
 			iii. Restart Postfix and Dovecot :
 				1) sudo systemctl restart postfix dovecot
 				
-	7. Step 7:   Test you Email Server -
+7. Step 7:   Test you Email Server -
 		a. Send a Test mail :
 			i. echo "Subject:SMTP SERVER \n\n SMTP server is setup successfully" | sendmail yourmail@email.com
 		b. Check logs :
@@ -110,7 +128,7 @@
 		c. Verify SPF, DKIM and DMARC :
 			i. Use tools like MXToolbox or Mail Tester
 			
-	8. Step 8:   Additional Security measures -
+8. Step 8:   Additional Security measures -
 		a. Fail2Ban -
 			i. Install and configure Fail2Ban to block brute-force attacks :
 				1) sudo apt install fail2ban -y
