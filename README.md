@@ -10,9 +10,9 @@
 ✅ **Fail2Ban & Rate-Limiting** – Prevents brute-force attacks  
 ✅ **DNS Records Configuration** – Ensures proper email authentication  
 
-## **📑Table of Contents**
-1. [⚙️ Installation](#--installation)
-2. [Setup SPF, DKIM & DMARC](#setup-spf-dkim--dmarc)
+## **📑 Table of Contents**
+1. [Installation](#installation)
+2. [Setup SPF, DKIM and DMARC](#setup-spf-dkim-and-dmarc)
 3. [Securing Your Email Server](#securing-your-email-server)
 4. [Testing Your Email Server](#testing-your-email-server)
 5. [Additional Security Measures](#additional-security-measures)
@@ -21,7 +21,7 @@
 
 ---
 
-### **⚙️ Installation**  
+### **Installation**  
 To set up the SMTP server on your VPS, follow these steps:
 
 1. **Step 1:** Update the system -
@@ -105,7 +105,7 @@ To set up the SMTP server on your VPS, follow these steps:
 
 ---
 
-### **🛡️ Setup SPF, DKIM & DMARC**
+### **Setup SPF, DKIM and DMARC**
 
 1. **SPF (Sender Policy Framework):**
     - Add a TXT record to your DNS:
@@ -162,7 +162,7 @@ To set up the SMTP server on your VPS, follow these steps:
 
 ---
 
-### **🔒 Securing Your Email Server**
+### **Securing Your Email Server**
 
 1. **Enable Firewall:**
     ```bash
@@ -202,7 +202,7 @@ To set up the SMTP server on your VPS, follow these steps:
 
 ---
 
-### **🚀 Testing Your Email Server**
+### **Testing Your Email Server**
 
 1. **Send a Test mail:**
     ```bash
@@ -219,7 +219,7 @@ To set up the SMTP server on your VPS, follow these steps:
 
 ---
 
-### **⚠️ Additional Security Measures**
+### **Additional Security Measures**
 
 1. **Fail2Ban:**
     - Install and configure Fail2Ban to block brute-force attacks:
