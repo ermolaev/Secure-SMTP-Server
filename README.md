@@ -206,7 +206,7 @@ To set up the SMTP server on your VPS, follow these steps:
 
 1. **Send a Test mail:**
     ```bash
-    echo "Subject:SMTP SERVER \n\n SMTP server is setup successfully" | sendmail yourmail@email.com
+    echo "Subject:SMTP SERVER \n\n SMTP server setup successfully" | sendmail yourmail@email.com
     ```
 
 2. **Check logs:**
