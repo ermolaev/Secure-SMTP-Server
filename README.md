@@ -12,7 +12,7 @@
 
 
 ## 88📑Table of Contents**
-1. [Installation](#Installation)
+1. [Installation](Installation)
 2. Setup SPF, DKIM & DMARC
 3. Securing Your Email Server
 4. Testing Your Email Server
