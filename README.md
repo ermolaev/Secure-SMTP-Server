@@ -74,6 +74,11 @@ To set up the SMTP server on your VPS, follow these steps:
         smtpd_use_tls = yes
         smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
         smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
+        
+        milter_default_action = accept
+        milter_protocol = 6
+        smtpd_milters = inet:localhost:8891
+        non_smtpd_milters = inet:localhost:8891
         ```
     - Restart Postfix:
         ```bash
@@ -128,14 +133,21 @@ To set up the SMTP server on your VPS, follow these steps:
         ```
         Update the following:
         ```text
+        Socket                 inet:8891@localhost
+
         Domain                 yourdomain.com
-        KeyFile                 /etc/opendkim/keys/yourdomain.com.private
-        Selector                default
+        KeyFile                /etc/opendkim/keys/${DKIM_DOMAIN}/${DKIM_SELECTOR}.private
+        Selector               default
         ```
     - Generate DKIM keys:
+        - Prepare
+            ```bash
+            export DKIM_DOMAIN=yourdomain.com
+            export DKIM_SELECTOR=default
+            ```
         - Create a folder for them:
             ```bash
-            sudo mkdir -p /etc/opendkim/keys/yourdomain.com
+            sudo mkdir -p /etc/opendkim/keys/${DKIM_DOMAIN}
             ```
         - Change Ownership:
             ```bash
@@ -143,16 +155,22 @@ To set up the SMTP server on your VPS, follow these steps:
             ```
         - Generate the DKIM keys:
             ```bash
-            sudo opendkim-genkey -D /etc/opendkim/keys/yourdomain.com -d yourdomain.com -s default
+            sudo opendkim-genkey -D /etc/opendkim/keys/${DKIM_DOMAIN} -d ${DKIM_DOMAIN} -s ${DKIM_SELECTOR}
             ```
         - Change ownership of the key file:
             ```bash
-            sudo chown opendkim:opendkim /etc/opendkim/keys/yourdomain.com/default.private
+            sudo chown opendkim:opendkim /etc/opendkim/keys/${DKIM_DOMAIN}/${DKIM_SELECTOR}.private
+            ```
+        - Restart OpenDKIM:
+            ```bash
+            sudo systemctl restart opendkim
             ```
     - Add the DKIM TXT record to your DNS:
         ```bash
-        cat /etc/opendkim/keys/yourdomain.com/default.txt
+        cat /etc/opendkim/keys/${DKIM_DOMAIN}/${DKIM_SELECTOR}.txt | sed 's/" "//g;s/[\(\)]//g;s/ *; --.*//'
         ```
+    - Verify DKIM:
+        sudo opendkim-testkey -d ${DKIM_DOMAIN} -s mail -vvv -k /etc/opendkim/keys/${DKIM_DOMAIN}/${DKIM_SELECTOR}.private -s ${DKIM_SELECTOR}
 
 3. **DMARC (Domain-based Message Authentication, Reporting and Conformance):**
     - Add a TXT record to your DNS:
@@ -197,7 +215,7 @@ To set up the SMTP server on your VPS, follow these steps:
     ```
     Restart Postfix and Dovecot:
     ```bash
-    sudo systemctl restart postfix dovecot
+    sudo systemctl restart opendkim postfix dovecot
     ```
 
 ---
