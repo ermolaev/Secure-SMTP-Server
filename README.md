@@ -135,7 +135,7 @@ To set up the SMTP server on your VPS, follow these steps:
         ```text
         Socket                 inet:8891@localhost
 
-        Domain                 yourdomain.com
+        Domain                 ${DKIM_DOMAIN}
         KeyFile                /etc/opendkim/keys/${DKIM_DOMAIN}/${DKIM_SELECTOR}.private
         Selector               default
         ```
@@ -170,7 +170,9 @@ To set up the SMTP server on your VPS, follow these steps:
         cat /etc/opendkim/keys/${DKIM_DOMAIN}/${DKIM_SELECTOR}.txt | sed 's/" "//g;s/[\(\)]//g;s/ *; --.*//'
         ```
     - Verify DKIM:
+        ```bash
         sudo opendkim-testkey -d ${DKIM_DOMAIN} -s mail -vvv -k /etc/opendkim/keys/${DKIM_DOMAIN}/${DKIM_SELECTOR}.private -s ${DKIM_SELECTOR}
+        ```
 
 3. **DMARC (Domain-based Message Authentication, Reporting and Conformance):**
     - Add a TXT record to your DNS:
